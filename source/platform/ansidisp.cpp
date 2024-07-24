@@ -44,7 +44,7 @@ inline void AnsiDisplayBase::Buffer::reserve(size_t extraCapacity) noexcept
     size_t oldSize = size();
     if (oldSize + extraCapacity > capacity)
     {
-        capacity = max<size_t>(max<size_t>(4096, 2*capacity), capacity + extraCapacity);
+        capacity = max(max(4096, 2*capacity), capacity + extraCapacity);
         if (!(head = (char *) realloc(head, capacity)))
             abort();
         tail = head + oldSize;

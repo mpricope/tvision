@@ -97,7 +97,7 @@ static bool CopyComponent(char* dstP, const char* startP, const char* endP, size
     {
         if (dstP)
             // This always adds a trailing '\0', thus the +1.
-            strnzcpy(dstP, startP, min<size_t>(MAX, endP-startP+1));
+            strnzcpy(dstP, startP, min(MAX, endP-startP+1));
         return true;
     }
     return false;

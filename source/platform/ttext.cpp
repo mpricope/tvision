@@ -224,7 +224,7 @@ size_t TText::prev(TStringView text, size_t index) noexcept
     {
         // Try reading backwards character by character, until a valid
         // character is found. This tolerates invalid characters.
-        size_t lead = min<size_t>(index, 4);
+        size_t lead = min(index, 4);
         for (size_t i = 1; i <= lead; ++i)
         {
             int len = ttext::mblen({&text[index - i], i});
