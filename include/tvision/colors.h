@@ -223,7 +223,7 @@ inline uint8_t RGBtoXTerm256(TColorRGB c)
         auto scale = [] (uchar c)
         {
             c += 20 & -(c < 75);
-            return uchar(max<uchar>(c, 35) - 35)/40;
+            return uchar(max(c, 35) - 35)/40;
         };
         uchar r = scale(c.r),
               g = scale(c.g),
@@ -236,7 +236,7 @@ inline uint8_t RGBtoXTerm256(TColorRGB c)
             return 16;
         if (l >= 238 + 5)
             return 231;
-        return 232 + uchar(max<uchar>(l, 3) - 3)/uchar(10);
+        return 232 + uchar(max(l, 3) - 3)/uchar(10);
     };
 
     uchar idx = cnvColor(c);
