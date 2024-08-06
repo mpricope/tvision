@@ -134,8 +134,8 @@ void TListViewer::draw()
                 {
                 if (indent < 255)
                     {
-                    char text[256];
-                    getText( text, item, 255 );
+                    char text[512];
+                    getText( text, item, 512 );
                     b.moveStr( curCol+1, text, color, colWidth, indent );
                     }
                 if( showMarkers )
